@@ -1,0 +1,128 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#viewDiv{
+    width: 100%;
+    height:  calc(100% - 45px);
+    padding: 0;
+    margin: 0;
+}
+
+nav{
+    height: 45px;
+    line-height:45px;
+    background-color: #085d9c;
+}
+
+.brand-logo{
+    margin-left:15px;
+    font-size: 1.5rem !important;
+}
+
+.icon-add{
+    margin-left: -9px;
+}
+
+.sidenav li .collapsible-body{
+    line-height: normal;
+    padding: 5px;
+    padding-left: 15px;
+}
+.modal .modal-footer {
+    text-align: center !important;
+}
+.modal-close{
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.esri-popup__main-container {
+    border-radius: 10px;
+}
+
+.esri-popup__header {
+    background-color: #085d9c;
+}
+    
+.esri-popup__header-buttons .esri-popup__icon {
+    color: white;
+}
+
+.esri-popup__header-title {
+    color: #fff;
+}
+
+.esri-view-width-xsmall .esri-expand--auto .esri-expand__container--expanded{
+    top: 23vh !important;
+}
+
+.nav-pedido{
+	display:flex;
+	justify-content: space-between;
+	align-content:center;
+}
+ 
+ .titulo{
+     font-size: 18px;
+     font-weight: bold;
+ }
+
+ .btn{
+    text-transform: none;
+    border: 1px solid white;
+    background-color: #6e6e6ead;
+    border-radius: 15px;
+    float: none !important;
+    padding: 0px 8px;
+    margin: 0px !important;
+    box-shadow: none;
+    
+    webkit-box-shadow: none;
+ }
+
+ .btn:hover{
+    background-color:transparent;
+ }
+
+.btn-buscar , .btn-menu{
+    border: none !important;
+    background-color: transparent !important;
+}
+
+.btn-menu{
+    margin-bottom: 21px !important;
+}
+.btn-registrar{
+    margin-bottom: 5px !important;
+}
+.btn i, a.sidenav-trigger{
+    height: 24px !important;
+    line-height: inherit !important;
+}
+
+.text-buscar{
+    position: absolute;
+    top: 8px;
+    right: 80px;
+    z-index: 100;
+    background-color: white !important;
+    height: 2rem !important;
+    /* height: 0 ; */
+    width: 25vw !important;
+    /* width: 0 ; */
+    border-radius: 5px !important;
+    padding: 0px 10px !important;
+    opacity: 0;
+}
+
+.ocultar{
+    opacity: 0;
+}
+
+.desocultar{
+    opacity: 1;
+}

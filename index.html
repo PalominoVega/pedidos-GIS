@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedidos.net.pe</title>
+	<!-- <link rel="icon" type="image/png" href="http://www.osinergmin.gob.pe/_catalogs/masterpage/starter/images/osinerg.ico"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="https://js.arcgis.com/4.14/esri/themes/light/main.css">
+</head>
+    <body id="mibody">
+      <nav>
+        <div class="nav-wrapper nav-pedido">
+          <div class="nav-logo">
+            <a href="#" class="titulo">Pedidos.net.pe</a>
+          </div>
+          <div class="nav-item">
+            <a id="btnregistrar" class=" btn btn-registrar " href="https://survey123.arcgis.com/share/8179dc794ac445fc89b67f4ea9822142"> Registrar mi Negocio</a>
+            <a href="#" class=" btn-buscar btn" id="btn-buscar"><i class="material-icons" id="icon-buscar">search</i></a>
+            <a href="#" data-target="slide-out" class="sidenav-trigger btn-menu btn"><i class="material-icons">menu</i></a>
+          </div>
+        </div>
+      </nav>
+      <!-- menu responsivo -->
+      <ul id="slide-out" class="sidenav">
+          <li>
+              <div class="user-view">
+                  <a href="http://giscorporativo.com.pe/" target="_blank"><img class="circle" src="https://pbs.twimg.com/profile_images/446408353351094272/j8aYsv9q_400x400.jpeg"></a>
+              </div>
+          </li>
+          <ul class="collapsible">
+              <li>
+                <div class="collapsible-header"><strong> ACERCA DE ...</strong></div>
+                <div class="collapsible-body">
+                  <span>
+                    Pedidos.net.pe es una aplicación gratuita, creada con el fin de dar visibilidad a través de un mapa, a los negocios de cualquier índole , y que indiquen sus productos o servicios, que son los más afectados en esta coyuntura que vive el país.
+                  </span>
+                  <p><strong>Disclaimer</strong> <br>
+                    Las verificaciones son muestrales, se recomienda contactar al negocio más cercano posible y acordar los detalles de la transacción que más seguridad les ofrezca.
+                  </p>  
+                  <p><strong>Consultas</strong> <br>
+                    Para actualización de información y/o ubicación en el mapa, escríbanos a: pedidos@giscorporativo.com
+                  </p>                    
+                  <p><strong>Equipo colaborador:</strong> <br>
+                    Cristhian Palomino<br>
+                    Presly Romero<br>
+                    William Hanco<br>
+                  </p>                  
+                </div>
+              </li>
+          </ul>
+      </ul>
+      <!-- <a href="#" data-target="slide-out" class="sidenav-trigger menu"><i class="material-icons">menu</i></a> -->
+        
+      <div id="viewDiv"></div>
+      <input type="text" name="buscar" id="buscar" class="text-buscar" value="verduras" >
+     
+      <!-- <div id="div-basemaps"></div> -->
+
+      <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="  crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script src="https://js.arcgis.com/4.14/"></script>
+      <script  src="js/map.js"></script>
+      <script>
+        $(document).ready(function(){
+          $('.sidenav').sidenav();
+          $('.collapsible').collapsible();
+
+          var elemento = document.getElementById('modal1');
+          var instance = M.Modal.getInstance(elemento);
+          instance.open();
+        });
+
+        $('.menu').on('click', function(){
+          $('.collapsible-body').show();
+        });                
+        // $('#btn-buscar').show();
+
+        var click=true;
+        
+        /**$('#btn-buscar').on('click', function(){
+          if(!click){
+            $('#buscar').animate({
+                "opacity":'1',
+                "width":"25vw"   
+              }, 300, function() {
+                $('#buscar').focus();
+            });
+            click=true;
+          }else{
+            if(click){
+              $('#buscar').animate({
+                "opacity":'0',
+                "width":"0"   
+              }, 300);
+              click=false;
+            }
+          }  
+        })
+        */
+        /*$('#btn-buscar').on('click', function(){
+          if(!click){
+            $('#buscar').addClass('ocultar');
+            $('#buscar').removeClass('desocultar');
+            click=true;
+          }else{
+            if(click){
+              $('#buscar').addClass('desocultar');
+              $('#buscar').removeClass('ocultar');
+              click=false;
+            }
+          }  
+        }) */
+        $('#btn-buscar').on('click', function(){
+          if(!click){
+            $('#buscar').fadeOut(500).addClass('ocultar').removeClass('desocultar');
+            $('#btnregistrar').addClass('desocultar').removeClass('ocultar');
+            $('#icon-buscar').text('search');
+            console.log($('#icon-buscar').text());
+            
+            click=true;
+          }else{
+            if(click){
+              $('#buscar').addClass('desocultar').removeClass('ocultar').fadeIn(500);
+              $('#btnregistrar').addClass('ocultar').removeClass('desocultar');
+              $('#icon-buscar').text('close');
+              click=false;
+              console.log($('#icon-buscar').text());
+              
+            }
+          }  
+        })
+
+
+
+      </script>
+	</body>
+</html>
