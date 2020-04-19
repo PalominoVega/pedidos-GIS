@@ -98,13 +98,13 @@
         */
         $('#btn-buscar').on('click', function(){
           if(!click){
-            $('#buscar').fadeOut(500).addClass('ocultar').removeClass('desocultar').focus();
+            $('#buscar').fadeOut(500).addClass('ocultar').removeClass('desocultar');
             $('#btnregistrar').addClass('desocultar').removeClass('ocultar');
             $('#icon-buscar').text('search');
             click=true;
           }else{
             if(click){
-              $('#buscar').addClass('desocultar').removeClass('ocultar').fadeIn(500);
+              $('#buscar').addClass('desocultar').removeClass('ocultar').focus().fadeIn(500);
               $('#btnregistrar').addClass('ocultar').removeClass('desocultar');
               $('#icon-buscar').text('close');
               click=false;
@@ -112,11 +112,11 @@
           }  
         })
 
-        // $(window).bind('keypress', function(event){
-        //   if (event.keyCode == 13){
-        //     $('#buscar').val('aqui');
-        //   }
-        // }); 
+        $(window).bind('keypress', function(event){
+          if (event.keyCode == 13){
+            $('#buscar').val('aqui');
+          }
+        }); 
 
       </script>
 	</body>
