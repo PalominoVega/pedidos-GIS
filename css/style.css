@@ -124,8 +124,10 @@ nav{
 
 .ocultar{
     opacity: 0;
+    display: none;
 }
 
 .desocultar{
     opacity: 1;
+    display: inline-block;
 }
