@@ -86,6 +86,9 @@ nav{
 
  .btn:hover{
     background-color:transparent;
+    box-shadow: none;
+    
+    webkit-box-shadow: none;
  }
 
 .btn-buscar , .btn-menu{

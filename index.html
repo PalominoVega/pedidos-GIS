@@ -55,7 +55,7 @@
       <!-- <a href="#" data-target="slide-out" class="sidenav-trigger menu"><i class="material-icons">menu</i></a> -->
         
       <div id="viewDiv"></div>
-      <input type="text" name="buscar" id="buscar" class="text-buscar" value="verduras" >
+      <input type="search" name="buscar" id="buscar" class="text-buscar" value="verduras" >
      
       <!-- <div id="div-basemaps"></div> -->
 
@@ -118,8 +118,6 @@
             $('#buscar').fadeOut(500).addClass('ocultar').removeClass('desocultar');
             $('#btnregistrar').addClass('desocultar').removeClass('ocultar');
             $('#icon-buscar').text('search');
-            console.log($('#icon-buscar').text());
-            
             click=true;
           }else{
             if(click){
@@ -127,13 +125,15 @@
               $('#btnregistrar').addClass('ocultar').removeClass('desocultar');
               $('#icon-buscar').text('close');
               click=false;
-              console.log($('#icon-buscar').text());
-              
             }
           }  
         })
 
-
+        $(window).bind('keypress', function(event){
+          if (event.keyCode == 13){
+            $('#buscar').val('aqui');
+          }
+        }); 
 
       </script>
 	</body>
