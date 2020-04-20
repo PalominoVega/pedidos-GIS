@@ -18,8 +18,8 @@
           </div>
           <div class="nav-item">
             <a id="btnregistrar" class=" btn btn-registrar " href="https://survey123.arcgis.com/share/8179dc794ac445fc89b67f4ea9822142"> Registrar mi Negocio</a>
-            <a href="#" class=" btn-buscar btn" id="btn-buscar"><i class="material-icons" id="icon-buscar">search</i></a>
-            <a href="#" data-target="slide-out" class="sidenav-trigger btn-menu btn"><i class="material-icons">menu</i></a>
+            <a href="#" class="btn btn-buscar " id="btn-buscar"><i class="material-icons" id="icon-buscar">search</i></a>
+            <a href="#" data-target="slide-out" class="btn sidenav-trigger btn-menu"><i class="material-icons">menu</i></a>
           </div>
         </div>
       </nav>
@@ -55,7 +55,7 @@
       <!-- <a href="#" data-target="slide-out" class="sidenav-trigger menu"><i class="material-icons">menu</i></a> -->
         
       <div id="viewDiv"></div>
-      <input type="search" name="buscar" id="buscar" class="text-buscar" value="verduras" >
+      <input type="search" name="buscar" id="buscar" class="text-buscar" value="" placeholder="Escriba y press enter">
      
       <!-- <div id="div-basemaps"></div> -->
 
@@ -110,13 +110,9 @@
               click=false;
             }
           }  
-        })
+        });
 
-        $(window).bind('keypress', function(event){
-          if (event.keyCode == 13){
-            $('#buscar').val('aqui');
-          }
-        }); 
+        
 
       </script>
 	</body>
