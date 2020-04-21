@@ -55,8 +55,11 @@
       <!-- <a href="#" data-target="slide-out" class="sidenav-trigger menu"><i class="material-icons">menu</i></a> -->
         
       <div id="viewDiv"></div>
-      <input type="search" name="buscar" id="buscar" class="text-buscar" value="" placeholder="Escriba y press enter">
-     
+      
+      <div id="container-input" >
+      	<input type="search" name="buscar" id="buscar" class="text-busca" value="" placeholder="Escriba y press enter">
+     	<a href="#" class="btn" id="btn-limpiar"><i class="material-icons" id="icon-buscar-cerrar">close</i></a>
+      </div>
       <!-- <div id="div-basemaps"></div> -->
 
       <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="  crossorigin="anonymous"></script>
@@ -98,19 +101,25 @@
         */
         $('#btn-buscar').on('click', function(){
           if(!click){
-            $('#buscar').fadeOut(500).addClass('ocultar').removeClass('desocultar');
-            $('#btnregistrar').addClass('desocultar').removeClass('ocultar');
-            $('#icon-buscar').text('search');
+           // $('#buscar').fadeOut(500).addClass('ocultar').removeClass('desocultar');
+            $('#container-input').fadeOut(500).addClass('ocultar').removeClass('desocultar');
+            //$('#btnregistrar').addClass('desocultar').removeClass('ocultar');
+          //  $('#icon-buscar').text('search');
             click=true;
           }else{
             if(click){
-              $('#buscar').addClass('desocultar').removeClass('ocultar').fadeIn(500).focus();
-              $('#btnregistrar').addClass('ocultar').removeClass('desocultar');
-              $('#icon-buscar').text('close');
+              $('#container-input').addClass('desocultar').removeClass('ocultar').fadeIn(500);
+             $('#buscar').focus();
+             // $('#btnregistrar').addClass('ocultar').removeClass('desocultar');
+            //  $('#icon-buscar').text('close');
               click=false;
             }
           }  
         });
+        
+        $('#btn-limpiar').on('click', function(){
+        	$('#buscar').val('').focus();
+        })
 
         
 
