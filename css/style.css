@@ -157,6 +157,13 @@ input {
     border-bottom-width:2px !important;
     margin-left: 5px !important;
     margin-bottom: 5px !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+input:focus{
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
 }
 
 #container-input a{
